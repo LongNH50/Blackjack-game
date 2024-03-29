@@ -1,0 +1,114 @@
+body {
+  
+  background-color: #e4f2e7;
+  font-family: 'Arial', sans-serif;
+}
+
+.game-container {
+  /* background-image: url('../assets/Table.jpg');
+  background-size: cover;
+  background-position: center;  */
+  background-color: #428f42;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  /* background-color: #fff; */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #0b110b;
+  margin-bottom: 20px;
+}
+
+.controls button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #b4141c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+div.controls > button:nth-child(2){
+  background-color: #04c607;
+
+}
+
+.controls button:hover,
+.controls button:focus {
+  background-color: #6ea96e;
+  outline: none;
+}
+
+.controls button:disabled {
+  background-color: #7c7f7d;
+  cursor: not-allowed;
+}
+
+.cards-container {
+  /* display: flex; */
+  justify-content: space-around;
+  flex-wrap: wrap; /* Make it responsive */
+  margin-top: 20px;
+  border: #7c7f7d 2px;
+  border-radius: 2px;
+}
+
+.game-container img {
+  width: 15%; /* Adjusted width */
+  height: 15%;
+  border-radius: 4px;
+}
+
+.player-section, .dealer-section {
+  flex: 1;
+  margin: 10px;
+  min-width: 280px; /* Minimum width for smaller devices */
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid #336633;
+  padding: 10px;
+  margin: 5px;
+  background-color: #f0f5f0;
+  border-radius: 4px;
+  transition: transform 0.2s; /* Smooth transform */
+}
+
+.card img {
+  width: 80px; /* Adjusted width */
+  height: auto;
+  border-radius: 4px; /* Optional: Round corners for images */
+}
+
+.game-message {
+  margin-top: 20px;
+  font-size: 40px;
+  color: #d00;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player-section, .dealer-section {
+    width: 100%;
+  }
+}
+

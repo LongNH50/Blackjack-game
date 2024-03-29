@@ -1,0 +1,44 @@
+<div class="game-container">
+  <h1>BLACKJACK TABLE</h1>
+  <img src="../assets/iconBlackJack.png" />
+  <!-- <div *ngIf="message" class="game-message">{{ message }}</div> -->
+
+  <div class="cards-container">
+    <div class="dealer-section">
+      <!-- <h2>Dealer</h2> -->
+      <div class="cards">
+        <div *ngFor="let card of dealerCards; let i = index" class="card">
+          <!-- <span style="background-color: black;" *ngIf="i === 1 && !dealerSecondCardRevealed">Hidden</span> -->
+          <img
+            *ngIf="i === 1 && !dealerSecondCardRevealed"
+            src="../assets/Hidden.png"
+            alt="Hidden"
+          />
+          <!-- <span *ngIf="!(i === 1 && !dealerSecondCardRevealed)">{{ card.display }} of {{ card.suit }}</span> -->
+          <img
+            [src]="card.img"
+            alt="{{ card.display }} of {{ card.suit }}"
+            *ngIf="!(i === 1 && !dealerSecondCardRevealed)"
+          />
+        </div>
+      </div>
+      <p *ngIf="dealerSecondCardRevealed">Score: {{ dealerScore }}</p>
+    </div>
+
+    <div class="player-section">
+      <!-- <h2>Player</h2> -->
+      <div class="cards">
+        <div *ngFor="let card of playerCards" class="card">
+          <!-- {{ card.display }} of {{ card.suit }} -->
+          <img [src]="card.img" alt="{{ card.display }} of {{ card.suit }}" />
+        </div>
+      </div>
+      <p>Score: {{ playerScore }}</p>
+    </div>
+  </div>
+  <div class="controls">
+    <button (click)="startGame()" [disabled]="!gameOver">Start Game</button>
+    <button (click)="hit()" [disabled]="gameOver">Hit +</button>
+    <button (click)="stand()" [disabled]="gameOver">Stand -</button>
+  </div>
+</div>
